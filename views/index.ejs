@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <title>Your dream cat</title>
+</head>
+<body>
+    <h1>CYBER CAT</h1>
+    <div class="container">
+      <form action="/submit" method="POST">
+        <select name="affection-level">
+          <option value="random">Random Level of Affection</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+    
+        <select name="child-friendliness">
+          <option value="random">Random Level of Child friendliness</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+    
+        <button type="submit">Go</button>
+      </form>
+      <% if (imgLink!== "nope" && imgLink!== null) { %>
+      <img src="<%= imgLink %>" alt="cat">
+      <% } else if (imgLink === "nope"){ %> 
+      <p>Pick a new one</p>
+      <% } else { %>
+      <p>welcome!</p>
+      <% } %>
+    </div>
+</body>
+</html>

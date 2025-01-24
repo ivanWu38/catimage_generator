@@ -5,7 +5,7 @@ import dotenv from "dotenv"
 
 dotenv.config();
 
-const app = express();
+const app = express()
 const port = 4000;
 const apiKey = process.env.CAT_API_KEY;
 
@@ -37,16 +37,17 @@ app.get("/", (req, res) => {
 });
 
 app.post("/submit", (req, res) => {
-  const affectionLevel = Number(req.body["affection-level"]);
-  const childFriendlyLevel = Number(req.body["child-friendliness"]);
+  const affectionLevel = req.body["affection-level"] === "random" ? null : Number(req.body["affection-level"]);
+  const childFriendlyLevel = req.body["child-friendliness"] === "random" ? null : Number(req.body["child-friendliness"]);
+
   console.log(`Affection Level: ${affectionLevel}, Child Friendliness: ${childFriendlyLevel}`);
 
   // Filter breeds based on user criteria
-  const filteredBreeds = breeds.filter(
-    (breed) =>
-      Number(breed.affection_level) === affectionLevel &&
-      Number(breed.child_friendly) === childFriendlyLevel
-  );
+  const filteredBreeds = breeds.filter((breed) => {
+    const matchesAffection = affectionLevel === null || Number(breed.affection_level) === affectionLevel;
+    const matchesChildFriendly = childFriendlyLevel === null || Number(breed.child_friendly) === childFriendlyLevel;
+    return matchesAffection && matchesChildFriendly;
+  });
 
   if (filteredBreeds.length === 0) {
     console.log("No cats found matching the criteria.");

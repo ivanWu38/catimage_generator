@@ -1,0 +1,71 @@
+body {
+    text-align: center;
+    background-image: repeating-conic-gradient(from 30deg, rgba(75, 250, 106, 0.93) 0% 60deg, rgba(219, 79, 130, 0.79) 0% 120deg);
+    background-size: 32px 55px;
+    background-color: rgba(219, 79, 130, 0.79);
+}
+
+h1 {
+  font-family: "Orbitron", serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-size: 6rem;
+  font-style: normal;
+  margin-top: 3rem;
+  color: #6300cd;
+  margin-bottom: 1rem;
+}
+
+select {
+    padding: 10px; /* Add some padding for better spacing */
+    border: 2px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Make the corners rounded */
+    font-size: 16px; /* Adjust font size */
+    font-weight: 600;
+    background-color: #f9f9f9; /* Light background color */
+    color: #333; /* Text color */
+    outline: none; /* Remove outline on focus */
+    cursor: pointer; /* Change cursor to pointer */
+}
+  
+/* Style on hover or focus */
+select:hover, select:focus {
+    border-color: #007BFF; /* Highlight border on hover or focus */
+    background-color: #fff; /* Change background color */
+}
+
+button {
+    padding: 10px; /* Add some padding for better spacing */
+    border: 2px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Make the corners rounded */
+    font-size: 16px; /* Adjust font size */
+    font-weight: 600;
+    background-color: #f9f9f9; /* Light background color */
+    color: #333; /* Text color */
+    outline: none; /* Remove outline on focus */
+    cursor: pointer; /* Change cursor to pointer */
+}
+  
+/* Style on hover or focus */
+button:hover, select:focus {
+    border-color: orange; /* Highlight border on hover or focus */
+    background-color: #fff; /* Change background color */
+}
+
+p {
+    font-family: "Orbitron", serif;
+    font-optical-sizing: auto;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+}
+
+img {
+    width: 70%;
+    margin-top: 1rem;
+    border-radius: 15%;
+    max-height: 570px;
+    object-fit: cover;
+}
